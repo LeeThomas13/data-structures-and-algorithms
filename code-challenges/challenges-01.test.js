@@ -13,7 +13,7 @@ const greeting = (word) => {
 };
 
 const speaker = (message, callback) => {
-  // Solution code here...
+  return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,18 +33,20 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
-
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 3
 
-Write a function named createList that takes in an array of the current store intentory.
+Write a function named createList that takes in an array of the current store inventory.
 
 The inventory is formatted like this:
 [
@@ -59,7 +61,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  var groceryList = [];
+  availableItems.forEach(value => {
+    if (value.available === true) {
+      groceryList.push(value.name);
+    }
+  });
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -77,7 +85,21 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let outArray = [];
+  arr.forEach(value => {
+    if (value % 3 === 0 && value % 5 !== 0) {
+      outArray.push('Fizz');
+    }
+    else if (value % 3 !== 0 && value % 5 === 0) {
+      outArray.push('Buzz');
+    }
+    else if (value % 3 === 0 && value % 5 === 0) {
+      outArray.push('Fizz Buzz');
+    } else {
+      outArray.push(value);
+    }
+  });
+  return outArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
