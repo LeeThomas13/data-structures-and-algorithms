@@ -30,7 +30,8 @@ const generateSubmitButton = () => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return true if the input contains a number, and false if the input does not contain a number.
+Write a function named isNum that takes in a string or number of any length. This function should use a regular expression pattern to return 
+true if the input contains a number, and false if the input does not contain a number.
 
 For example:
 12345 returns true
@@ -40,31 +41,41 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  test(input)
+  return /\d/g.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter. It should only match words, not punctuation.
+Write a function named isCapitalized that takes in a string. This function should use a regular expression pattern to match all words that begin with a capital letter.
+It should only match words, not punctuation.
 
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  let regex = /[A-Z]\w*/g;
+  let myArray = str.match(regex);
+  return myArray || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
+Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array
+containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const successfulCities = [];
+  const myRe = /^[A-J]\w*/gim;
+  arr.forEach((city) => {
+    if (myRe.test(city)) {
+      successfulCities.push(city);
+    }
+  });
+  return successfulCities || [];
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
 
