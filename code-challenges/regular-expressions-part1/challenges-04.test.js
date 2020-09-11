@@ -68,10 +68,13 @@ containing any cities that begin with the letters A through J, inclusive.
 
 const citiesAtoJ = (arr) => {
   const successfulCities = [];
-  const myRe = /^[A-J]\w*/gim;
+  const unsuccessfulCities = [];
+  const myRe = /^[A-J]\w*/;
   arr.forEach((city) => {
     if (myRe.test(city)) {
       successfulCities.push(city);
+    }else {
+      unsuccessfulCities.push(city);
     }
   });
   return successfulCities || [];
