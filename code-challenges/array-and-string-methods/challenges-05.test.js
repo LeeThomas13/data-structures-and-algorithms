@@ -37,8 +37,15 @@ let $ = createSnippetWithJQuery(`
 `);
 
 const templateWithJQuery = () => {
-  // Solution code here...
-}
+  starWarsPeople.forEach((person) => {
+    const template = $("#template").html();
+    const $person = $(`<section>${template}</section>`);
+    $person.find('h2').text(person.name);
+    $person.find('h3').text(person.height);
+    $person.find('p').text(person.eye_color);
+    $('main').append($person);
+  });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -55,7 +62,10 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i=0; i<=str.length; i++) {
+    let cutString = str.slice(i);
+    result.push(cutString);
+  }
   return result;
 };
 
@@ -68,7 +78,7 @@ For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
 const wordsToCharList = (arr) => {
-  // Solution code here...
+  return arr.split('');
 };
 
 
@@ -77,7 +87,8 @@ CHALLENGE 4
 
 You are making a grocery list for ingredients needed in the gruffalo crumble recipe, below. Rather than taking the entire recipe, you only want a list of the item names.
 
-Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units. Just the name. For example, '1 cup flour' will return 'flour'.
+Write a function named listFoods that takes in the recipe and returns a new array of the food items without any amount or units.
+Just the name. For example, '1 cup flour' will return 'flour'.
 
 Use slice for this function, maybe more than once. The Array.indexOf() method may also be helpful.
 
@@ -115,7 +126,11 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach((ingredient) => {
+    let index = ingredient.indexOf(" ", ingredient.indexOf(" ") + 1);
+    let item = ingredient.substr(index + 1);
+    result.push(item);
+  });
   return result;
 };
 
