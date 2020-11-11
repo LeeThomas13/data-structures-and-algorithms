@@ -10,4 +10,4 @@ take in an array and the value to be added. Without utilizing any of the built-i
 We need to find a way to divide the total number of indicies by 2, get that number, and push the new value into its place. We also need a catch for if the array does not get divided by 2 cleanly.
 
 ## Solution
-![White Board Image](../../pictures/whiteboard2.png)
+![White Board Image](../../assets/array-reverse.png)

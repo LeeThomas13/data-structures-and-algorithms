@@ -81,4 +81,5 @@ Code Challenges:
 
 -Array Reverse
 -Array Shift
+-Array Binary Search
 -Reverse Linked List
