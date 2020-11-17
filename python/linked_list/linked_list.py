@@ -24,12 +24,6 @@ class LinkedList:
             current = current.next
         return total
 
-    def find_value(self, data):
-        current = self.head
-        value = self.data
-        while current is not value:
-            
-
     def verify_index (self, index):
         if index >= self.length():
             return False
@@ -41,7 +35,14 @@ class LinkedList:
                 return True
             current_index += 1
 
-
+    def __str__(self):
+        result = ""
+        current = self.head
+        while current is not None:
+            result += "{" + f"{current.data}" + "} -> "
+            current = current.next
+        result += "Null"
+        return result
 
 
 

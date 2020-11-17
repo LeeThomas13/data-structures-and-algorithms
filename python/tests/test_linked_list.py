@@ -39,8 +39,7 @@ def test_value_is_true():
     ll.append(2)
     ll.append(3)
     ll.append(4)
-    ll.append(5)
-    assert ll.verify_index(5) == True
+    assert ll.verify_index(2) == True
 
 #search through linked list to see if there is a specified value, returns boolean True or False
 def test_value_is_false():
@@ -50,6 +49,15 @@ def test_value_is_false():
     ll.append(3)
     ll.append(4)
     assert ll.verify_index(7) == False
+
+#test to see if we can properly return a collection of all the values that exits in the linked list.
+def test_collection():
+    ll = LinkedList()
+    ll.append(2)
+    ll.append(3)
+    ll.append(4)
+    ll.append(5)
+    assert str(ll) == '{5} -> {4} -> {3} -> {2} -> Null'
 
 
 
