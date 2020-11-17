@@ -23,3 +23,5 @@ Ensure your tests are passing before you submit your solution.
 
 
 [link to first PR](https://github.com/LeeThomas13/data-structures-and-algorithms/pull/17)
+
+[link to second PR](https://github.com/LeeThomas13/data-structures-and-algorithms/pull/18)
