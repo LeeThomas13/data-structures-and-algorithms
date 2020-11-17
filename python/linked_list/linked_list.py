@@ -1,26 +1,50 @@
 class Node:
     #defines what a node will be, its starting value is none.
-    def __init__(self, data=None):
+    def __init__(self, data):
         self.data=data
         self.next=None
 
-class LinkedList():
+
+class LinkedList:
 
     def __init__(self):
-        self.head = Node()
+        self.head = None
 
-    def append(self, data):
-        #pushes new nodes into the linked list.
+    def append (self, data):
         new_node = Node(data)
-        cur = self.head
-        while cur.next!=None:
-            cur = cur.next
-        cur.next = new_node
+        old = self.head
+        self.head = new_node
+        self.head.next = old
+
+    def length(self):
+        current = self.head
+        total = 0
+        while current.next is not None:
+            total+=1
+            current = current.next
+        return total
+
+    def find_value(self, data):
+        current = self.head
+        value = self.data
+        while current is not value:
+            
+
+    def verify_index (self, index):
+        if index >= self.length():
+            return False
+        current_index = 0
+        current_node = self.head
+        while True:
+            current_node = current_node.next
+            if current_index == index:
+                return True
+            current_index += 1
 
 
-LinkedList.append(1)
-LinkedList.append(2)
-LinkedList.append(3)
+
+
+
 
 
 
