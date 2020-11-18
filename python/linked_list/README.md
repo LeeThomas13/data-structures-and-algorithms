@@ -25,3 +25,17 @@ Ensure your tests are passing before you submit your solution.
 [link to first PR](https://github.com/LeeThomas13/data-structures-and-algorithms/pull/17)
 
 [link to second PR](https://github.com/LeeThomas13/data-structures-and-algorithms/pull/18)
+
+# Code Challenge 07
+
+# Challenge Summary
+write a funciton kth from end.
+
+## Challenge Description
+this function should return a value (k) from the end of a linked list.
+
+## Approach & Efficiency
+out intial approach was to make a linked list and then reverse it, and count from the front to the back (k) times. We then refactored this to make a second pointer start going through the linked list once a counter had reached a certain integer.
+
+## Solution
+![White Board Image](../assets/kth_from_end.png)

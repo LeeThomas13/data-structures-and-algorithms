@@ -2,6 +2,7 @@ from linked_list.linked_list import Node, LinkedList
 
 import pytest
 
+#Code Challenge 05
 def test_import():
     assert LinkedList
 
@@ -59,5 +60,13 @@ def test_collection():
     ll.append(5)
     assert str(ll) == '{5} -> {4} -> {3} -> {2} -> Null'
 
-
-
+#Code Challenge 07
+def test_linked_list_kth_from_end():
+    ll = LinkedList()
+    ll.insert(5)
+    ll.insert(9)
+    ll.insert(3)
+    ll.insert(7)
+    actual = ll.kth_from_end(1)
+    expected = 9
+    assert actual == expected
