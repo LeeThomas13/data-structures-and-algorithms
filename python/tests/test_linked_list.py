@@ -60,13 +60,26 @@ def test_collection():
     ll.append(5)
     assert str(ll) == '{5} -> {4} -> {3} -> {2} -> Null'
 
+#Code Challenge 06
+#still in progress
+
 #Code Challenge 07
+#test to see if we can return the k value
 def test_linked_list_kth_from_end():
     ll = LinkedList()
     ll.insert(5)
     ll.insert(9)
     ll.insert(3)
     ll.insert(7)
-    actual = ll.kth_from_end(1)
+    actual = ll.kth_from_end(2)
     expected = 9
     assert actual == expected
+
+#Code Challenge 08
+#test to see if we can 'zip' two linked lists together
+def test_zipped_linked_list():
+    ll= LinkedList()
+    ll.insert(a)
+    ll.insert(b)
+    ll.insert(c)
+    expected = str(ll) == '{a} -> {b} ->{c}'
