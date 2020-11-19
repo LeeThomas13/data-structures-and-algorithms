@@ -78,21 +78,35 @@ def test_linked_list_kth_from_end():
 #Code Challenge 08
 #test to see if we can 'zip' two linked lists together
 
-def test_zip_lists(the_list_a, the_list_b):
-    zip_ll = zip_lists(the_list_a, the_list_b)
-    actual = zip_ll.__str__()
-    expected = '4 -> 8 -> 12 -> 16 -> 20 -> None'
-    assert actual == expected
-@pytest.fixture
-def the_list_b():
-    ll = Linked_list()
-    ll.append(8)
-    ll.append(16)
-    return ll
-@pytest.fixture
-def the_list_a():
-    ll = Linked_list()
-    ll.append(4)
-    ll.append(12)
-    ll.append(20)
-    return ll
+def test_zip_lists_function():
+    lista = LinkedList()
+    lista.insert(1)
+    lista.insert(2)
+    lista.insert(3)
+    listb = LinkedList()
+    listb.insert(4)
+    listb.insert(5)
+    listb.insert(6)
+    expected = zip_list(lista, listb)
+
+
+
+
+# def test_zip_lists(the_list_a, the_list_b):
+#     zip_ll = zip_lists(the_list_a, the_list_b)
+#     actual = zip_ll.__str__()
+#     expected = '4 -> 8 -> 12 -> 16 -> 20 -> None'
+#     assert actual == expected
+# @pytest.fixture
+# def the_list_b():
+#     ll = Linked_list()
+#     ll.append(8)
+#     ll.append(16)
+#     return ll
+# @pytest.fixture
+# def the_list_a():
+#     ll = Linked_list()
+#     ll.append(4)
+#     ll.append(12)
+#     ll.append(20)
+#     return ll

@@ -106,18 +106,26 @@ class LinkedList:
     def zip_lists(lista, listb):
         list_a_node = lista.head
         list_b_node = listb.head
-        zip_list = Linked_list()
+        zip_list = LinkedList()
         while list_a_node or list_b_node:
             if list_a_node:
-                zip_list.append(list_a_node.value)
+                zip_list.append(list_a_node.data)
                 list_a_node = list_a_node.next
             if list_b_node:
-                zip_list.append(list_b_node.value)
+                zip_list.append(list_b_node.data)
                 list_b_node = list_b_node.next
         return zip_list
 
 
-
+lista = LinkedList()
+lista.insert(1)
+lista.insert(2)
+lista.insert(3)
+listb = LinkedList()
+listb.insert(4)
+listb.insert(5)
+listb.insert(6)
+print(LinkedList.zip_lists(lista, listb))
 
 
 
