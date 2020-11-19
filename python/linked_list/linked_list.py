@@ -75,7 +75,7 @@ class LinkedList:
         return result
 
     # def kth_from_end(self, k):
-    #     list = [1, 3, 8, 2]
+    #     list = []
     #     counter = 0
     #     runner = self.head
     #     follower = self.head
@@ -102,6 +102,20 @@ class LinkedList:
             count+= 1
         if count > k:
             return value_seeking.data
+
+    def zip_lists(lista, listb):
+        list_a_node = lista.head
+        list_b_node = listb.head
+        zip_list = Linked_list()
+        while list_a_node or list_b_node:
+            if list_a_node:
+                zip_list.append(list_a_node.value)
+                list_a_node = list_a_node.next
+            if list_b_node:
+                zip_list.append(list_b_node.value)
+                list_b_node = list_b_node.next
+        return zip_list
+
 
 
 
