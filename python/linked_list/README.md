@@ -38,4 +38,18 @@ this function should return a value (k) from the end of a linked list.
 out intial approach was to make a linked list and then reverse it, and count from the front to the back (k) times. We then refactored this to make a second pointer start going through the linked list once a counter had reached a certain integer.
 
 ## Solution
-![White Board Image](../assets/kth_from_end.png)
+![Kth from end whiteboard](../assets/kth_from_end.png)
+
+# Code challenge 08
+
+# Challenge Summary
+zip two linked lists together.
+
+## Challenge Description
+Take in two linked lists, the head of the first list will be followed by the head of the second lists, then index 1 of the first list will be followed by index 1 of the second lists etc...
+
+## Approach & Efficiency
+We made a function that will automatically swap between the two lists and append the head of each list to a third list. We then return the third list.
+
+## Solution
+![Zipped Lists Whiteboard](../assets/zipped-lists.png)
