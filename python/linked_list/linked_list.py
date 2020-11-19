@@ -106,20 +106,16 @@ class LinkedList:
     def zip_lists(lista, listb):
         list_a_node = lista.head
         list_b_node = listb.head
-        zip_list = Linkedlist()
+        zip_list = Linked_list()
         while list_a_node or list_b_node:
             if list_a_node:
                 zip_list.append(list_a_node.value)
                 list_a_node = list_a_node.next
-            elif list_a_node == None:
-                raise ValueError("List A needs a value")
-
             if list_b_node:
                 zip_list.append(list_b_node.value)
                 list_b_node = list_b_node.next
-            elif list_b_node == None:
-                raise ValueError("List B needs a value")
         return zip_list
+
 
 
 
