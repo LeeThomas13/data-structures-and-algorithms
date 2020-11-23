@@ -26,12 +26,11 @@ def test_head_points_to_first_index():
 #test to see if the linked list can hold data
 def test_multiple_node_insertion():
     ll = LinkedList()
-    ll.append('a')
-    ll.append('b')
-    ll.append('c')
+    ll.insert('a')
+    ll.insert('b')
+    ll.insert('c')
     assert ll.head.data == 'c'
-    assert ll.head.next.data == 'b'
-    assert ll.head.next.next.data == 'a'
+
 
 #search through linked list to see if there is a specified value, returns boolean True or False
 def test_value_is_true():
@@ -54,14 +53,41 @@ def test_value_is_false():
 #test to see if we can properly return a collection of all the values that exits in the linked list.
 def test_collection():
     ll = LinkedList()
-    ll.append(2)
-    ll.append(3)
-    ll.append(4)
-    ll.append(5)
-    assert str(ll) == '{5} -> {4} -> {3} -> {2} -> Null'
+    ll.insert(2)
+    ll.insert(3)
+    ll.insert(4)
+    ll.insert(5)
+    assert ll.__str__() == '{5} -> {4} -> {3} -> {2} -> None'
 
 #Code Challenge 06
-#still in progress
+#Can successfully add a node to the end of the linked list
+def test_insertion_at_end():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(2)
+    ll.append(3)
+    assert ll.__str__() == '{1} -> {2} -> {3} -> None'
+
+#Can successfully add multiple nodes to the end of a linked list
+def test_multiple_insertion_at_end():
+    ll = LinkedList()
+    ll.append(1)
+    ll.append(2)
+    ll.append(3)
+    ll.append('banana')
+    assert ll.__str__() == '{1} -> {2} -> {3} -> {banana} -> None'
+#can successfully inster a node before a node located in the middle of a linked list
+def test_insert_before_middle_index():
+    ll = LinkedList()
+    ll.insert(1)
+    ll.insert(2)
+    ll.insert(4)
+    ll.insert(5)
+    ll.insert_before(3, 2)
+    assert ll.__str__() == '{1} -> {2} -> {3} -> {4} -> {5} -> None'
+#can can successfully insert a node before the first node of a linked list
+#can successfully insert after a node in the middle of the linked list
+#can successfully insert a node after the last node of the linked list
 
 #Code Challenge 07
 #test to see if we can return the k value
@@ -88,25 +114,3 @@ def test_zip_lists_function():
     listb.insert(5)
     listb.insert(6)
     expected = zip_list(lista, listb)
-
-
-
-
-# def test_zip_lists(the_list_a, the_list_b):
-#     zip_ll = zip_lists(the_list_a, the_list_b)
-#     actual = zip_ll.__str__()
-#     expected = '4 -> 8 -> 12 -> 16 -> 20 -> None'
-#     assert actual == expected
-# @pytest.fixture
-# def the_list_b():
-#     ll = Linked_list()
-#     ll.append(8)
-#     ll.append(16)
-#     return ll
-# @pytest.fixture
-# def the_list_a():
-#     ll = Linked_list()
-#     ll.append(4)
-#     ll.append(12)
-#     ll.append(20)
-#     return ll
