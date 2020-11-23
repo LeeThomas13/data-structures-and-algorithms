@@ -1,8 +1,8 @@
 class Node:
     #defines what a node will be, its starting value is none.
-    def __init__(self, data):
+    def __init__(self, data, next_=None):
         self.data=data
-        self.next=None
+        self.next_=next_
 
 
 class LinkedList:
@@ -11,47 +11,52 @@ class LinkedList:
         self.head = None
 
     def insert(self, data):
-        self.head = Node(data)
+        self.head = Node(data, self.head)
 
-    def insert_before(self, value, new_value):
-        if not self.head:
-            return
-
-        if self.head == value:
-            self.insert(new_value)
-
+    def insert_before(self, data, new_value):
         current = self.head
 
-        while current.next:
-            if current.next.value == value:
-                current.next = Node(new_value, current.next)
-                return
+        if current == None:
+            return "something broke :/"
 
-            current = current.next
+        if current.data == data:
+            self.insert(new_value)
 
-    def insert_after(self, value):
+        while current.next_:
+            if current.next_.data == data:
+                current.next_ = Node(new_value, current.next_)
+                break
+            current = current.next_
+            if current.next_ == None:
+                return "something went wrong"
+
+    def insert_after(self, data):
         if not self.head:
             return
 
         current = self.head
 
         while current:
-            if current.value == value:
-                current.next = Node(new_value, current.next)
+            if current.data == data:
+                current.next_ = Node(new_value, current.next_)
                 return
 
     def append (self, data):
         new_node = Node(data)
-        old = self.head
-        self.head = new_node
-        self.head.next = old
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next_:
+            current = current.next_
+        current.next_ = new_node
 
     def length(self):
         current = self.head
         total = 0
-        while current.next is not None:
+        while current.next_ is not None:
             total+=1
-            current = current.next
+            current = current.next_
         return total
 
     def verify_index (self, index):
@@ -60,7 +65,7 @@ class LinkedList:
         current_index = 0
         current_node = self.head
         while True:
-            current_node = current_node.next
+            current_node = current_node.next_
             if current_index == index:
                 return True
             current_index += 1
@@ -70,22 +75,9 @@ class LinkedList:
         current = self.head
         while current is not None:
             result += "{" + f"{current.data}" + "} -> "
-            current = current.next
-        result += "Null"
+            current = current.next_
+        result += "None"
         return result
-
-    # def kth_from_end(self, k):
-    #     list = []
-    #     counter = 0
-    #     runner = self.head
-    #     follower = self.head
-    #     while runner.next:
-    #         runner = runner.next
-    #         counter += 1
-    #         if counter > k:
-    #             follower = follower.next
-    #         return follower.data
-    #     if counter > k:
 
     def kth_from_end(self, k):
         list = []
@@ -97,8 +89,8 @@ class LinkedList:
             if count == k:
                 value_seeking = self.head
             elif count > k:
-                value_seeking = value_seeking.next
-            current = current.next
+                value_seeking = value_seeking.next_
+            current = current.next_
             count+= 1
         if count > k:
             return value_seeking.data
@@ -110,22 +102,20 @@ class LinkedList:
         while list_a_node or list_b_node:
             if list_a_node:
                 zip_list.append(list_a_node.data)
-                list_a_node = list_a_node.next
+                list_a_node = list_a_node.next_
             if list_b_node:
                 zip_list.append(list_b_node.data)
-                list_b_node = list_b_node.next
+                list_b_node = list_b_node.next_
         return zip_list
 
+ll = LinkedList()
+ll.insert(1)
+ll.insert(2)
+ll.insert(4)
+ll.insert(5)
+ll.insert_before(3, 2)
 
-lista = LinkedList()
-lista.insert(1)
-lista.insert(2)
-lista.insert(3)
-listb = LinkedList()
-listb.insert(4)
-listb.insert(5)
-listb.insert(6)
-print(LinkedList.zip_lists(lista, listb))
+print(ll.__str__())
 
 
 
