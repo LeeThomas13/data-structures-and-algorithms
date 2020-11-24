@@ -79,6 +79,7 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 
 Code Challenges:
 
+-Queue With Stacks
 -Array Reverse
 -Array Shift
 -Array Binary Search
