@@ -1,9 +1,9 @@
 # Code Challenge 16
 
-# Trees
+## Trees
 Make a binary tree and a binary search tree with the ability to sort the tree in post and pre order.
 
-## Challenge
+### Challenge
 Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 Create a BinaryTree class
 Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
@@ -13,23 +13,23 @@ Create a BinarySearchTree class
 Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
-## Approach & Efficiency
+### Approach & Efficiency
 I approached this with three separate classes. The first would be the node class, which takes in a value, a left and a right. The next is the binary tree class, which holds the functions for how the binary tree will be traversed. The third is creating a binary search tree class which can add values, and search for values in the tree.
 
-## API
+### API
 Pre-Order sorting will walk the nodes from node, left then right. In-Order sorting will walk the nodes from left, node, then right. Post-Order sorting will walk thee nodes from left, to right, then the node. The add binary search function will place nodes wither to the left or right of the root node. if the value is bigger than the root node, it is placed to the left. If smaller, it is placed to the right. The search method looks at the root node, then compares its value to the desired value, if bigger, we walk to the left, else we go right. We then repeat until the desired value is equal to the root node, or if its left/right is None.
 
 
 # Code Challenge 17
 
-# Challenge Summary
+## Challenge Summary
 Make a function of the binary tree class that can return the biggest value of the tree.
 
-## Challenge Description
+### Challenge Description
 Write an instance method called find-maximum-value. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+### Approach & Efficiency
+We plan to make a function that compares two nodes, and stores the biggest node. We will then traverse the entire tree, comparing every nodes value to the stored value, if bigger, we set the bigger value equal to the stored value. At the end we return the stored value. We will be using a pre-order sort.
 
-## Solution
-<!-- Embedded whiteboard image -->
+### Solution
+![Max Value Whiteboard](../../assets/max-value-whiteboard.png)
