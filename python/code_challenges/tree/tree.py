@@ -1,7 +1,7 @@
 class Node:
 
     def __init__(self, value):
-        
+
         self.value = value
         self.left = None
         self.right = None
@@ -54,6 +54,22 @@ class BinaryTree:
             values.append(current.value)
         walk(self.root)
         return values
+
+    def find_max_value(self):
+
+        current = self.root
+
+        def traverse(root):
+
+            nonlocal current
+            if not root:
+                return
+            if root.value > current.value:
+                current = root
+            traverse(root.left)
+            traverse(root.right)
+        traverse(self.root)
+        return current.value
 
 
 class BinarySearchTree(BinaryTree):
