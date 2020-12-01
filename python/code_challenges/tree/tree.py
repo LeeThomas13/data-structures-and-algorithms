@@ -58,12 +58,14 @@ class BinaryTree:
     def find_max_value(self):
 
         current = self.root
+        if not self.root:
+            return None
 
         def traverse(root):
 
-            nonlocal current
             if not root:
                 return
+            nonlocal current
             if root.value > current.value:
                 current = root
             traverse(root.left)
@@ -107,10 +109,10 @@ class BinarySearchTree(BinaryTree):
             if node.value == value:
                 return True
             else:
-                # if value is less than nodes value walk left if value is greater than nodes value walk right
                 if value < node.value:
                     return walk(node.left)
                 else:
                     return walk(node.right)
         found = walk(self.root)
         return found
+
