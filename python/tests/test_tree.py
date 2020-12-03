@@ -1,6 +1,6 @@
 import pytest
 
-from code_challenges.tree.tree import Node, BinaryTree, BinarySearchTree
+from code_challenges.tree.tree import Node, BinaryTree, BinarySearchTree, Queue
 
 # Code Challenge 16
 
@@ -82,3 +82,31 @@ def test_nothing_in_tree():
    expected = None
    assert actual == expected
 
+
+# Code Challenge 18
+
+def test_return_breadth_list():
+    tree = BinaryTree()
+    node1 = Node(1)
+    node2 = Node(9)
+    node3 = Node(5)
+    node1.left = node2
+    node1.right = node3
+    tree.root = node1
+    actual = tree.breadth_first()
+    expected = [1, 9, 5]
+    assert actual == expected
+
+def test_expect_failure():
+    tree = BinaryTree()
+    with pytest.raises(ValueError):
+        tree.breadth_first()
+
+
+def test_one_node():
+    tree = BinaryTree()
+    node1 = Node(5)
+    tree.root = node1
+    actual = tree.breadth_first()
+    expected = [5]
+    assert actual == expected

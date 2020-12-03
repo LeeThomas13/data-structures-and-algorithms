@@ -61,7 +61,6 @@ class Queue:
             raise InvalidOperationError()
         return self.front.value
 
-
     def is_empty(self):
         return not self.front
 
