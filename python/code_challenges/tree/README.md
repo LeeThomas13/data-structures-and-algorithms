@@ -33,3 +33,18 @@ We plan to make a function that compares two nodes, and stores the biggest node.
 
 ### Solution
 ![Max Value Whiteboard](../../assets/max-value-whiteboard.png)
+
+
+# Code Challenge 18
+
+## Challenge Summary
+Return a list of a binary trees values, using breadth first traversal.
+### Challenge Description
+Write a breadth first traversal method which takes a Binary Tree as its unique input. Without utilizing any of the built-in methods available to your language, traverse the input tree using a Breadth-first approach, and return a list of the values in the tree in the order they were encountered.
+
+### Approach & Efficiency
+we used a loop that fired when the queue is not empty. We first enqueue the root of the tree, then immediately dequeue it once the while loop begins. Every time we dequeue a value, we append it to a list. We then return the list.
+
+### Solution
+<!-- Embedded whiteboard image -->
+![Breadth First Whiteboard](../../assets/breadth-first.png)
