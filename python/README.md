@@ -86,3 +86,9 @@ Code Challenges:
 -Reverse Linked List
 -Linked Lists
 -Stacks and Queues
+-Quick Sort
+-Merge Sort
+-Insertion Sort
+-Binary Search Tree
+-Cartesian Tree
+-Hash Table

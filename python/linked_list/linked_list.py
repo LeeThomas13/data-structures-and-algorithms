@@ -108,15 +108,6 @@ class LinkedList:
                 list_b_node = list_b_node.next_
         return zip_list
 
-ll = LinkedList()
-ll.insert(1)
-ll.insert(2)
-ll.insert(4)
-ll.insert(5)
-ll.insert_before(3, 2)
-
-print(ll.__str__())
-
 
 
 
