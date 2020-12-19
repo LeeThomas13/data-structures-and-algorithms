@@ -31,7 +31,7 @@ class HashTable:
     def get(self, key):
         hashed_key_index = self._hash(key)
 
-        bucket = self.buckets[hashed_key_index]
+        bucket = self._buckets[hashed_key_index]
 
         current = bucket.head
 
@@ -43,5 +43,26 @@ class HashTable:
                 return pair[1]
 
             current = current.next
+
+    def contains(self, key):
+        hashed_key_index = self._hash(key)
+
+        bucket = self._buckets[hashed_key_index]
+
+        current = bucket.head
+
+        while current:
+
+            pair = current.data
+
+            if pair[0] == key:
+                return True
+
+            else:
+                return False
+
+
+            current = current.next
+
 
 
