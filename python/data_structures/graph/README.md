@@ -23,7 +23,11 @@ Size()
 Returns the total number of nodes in the graph
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+The efficiency of graphs is O(n) space complexity and O(n) time complexity I beleive
 
 ## API
-<!-- Description of each method publicly available in your Graph -->
+add_node() adds a new node to the graph
+add_edge() adds an edge between two nodes
+get_node() returns all of the nodes in the graph in a list
+get_neighbors() returns a tuple of edges and their connected nodes
+size() returns the length of the adjacency_list

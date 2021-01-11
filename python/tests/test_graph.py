@@ -1,6 +1,6 @@
 import pytest
 
-from graph import Graph, Vertex, Edge
+from data_structures.graph.graph import Graph, Vertex, Edge
 
 def test_add_node_returns_vertex():
 
